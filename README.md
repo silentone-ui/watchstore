@@ -1,12 +1,5 @@
 a simple project of watchstore
 
-
-class Product(BaseModel, SluggedMixinModel):
-    title = models.CharField(max_length=200)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    description = models.TextField(verbose_name='توضیحات کامل')
-    main_image = models.ImageField(upload_to='products/', verbose_name='تصویر اصلی')
-
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='products')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
     
